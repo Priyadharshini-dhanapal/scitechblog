@@ -1,0 +1,150 @@
+<!-- admin.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        /* admin.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: #444;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.auth-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1em;
+}
+
+.admin-container {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.admin-container h1 {
+    text-align: center;
+}
+
+.admin-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    margin-right: 1em;
+    background-color: #01060c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0f1e35;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contact,
+.social-media,
+.qna {
+    width: 30%;
+    margin: 1em;
+}
+
+.contact h2,
+.social-media h2,
+.qna h2 {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.contact p,
+.qna p {
+    margin: 0.5em 0;
+}
+
+.social-media a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin: 0.5em 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html">SciTech Blog</a>
+        </div>
+        <div class="auth-links">
+            <a href="login.html">Login</a> | <a href="signup.html">Sign Up</a>
+        </div>
+    </header></br></br></br>
+
+    <section class="admin-container">
+        <h1>Welcome to the Admin Panel</h1>
+        <div class="admin-buttons">
+            <button onclick="location.href='create.html';">Create</button>
+            <button>Edit</button>
+            <button>Delete</button>
+            <!-- Add more admin-related buttons as needed -->
+        </div>
+    </section></br></br></br></br></br>
+
+    <footer>
+        <div class="contact">
+            <h2>Contact</h2>
+            <p>Email: info@scitechblog.com</p>
+            <p>Phone: +1 123-456-7890</p>
+        </div>
+        <div class="social-media">
+            <h2>Social Media</h2>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">Instagram</a>
+        </div>
+        <div class="qna">
+            <h2>Q&A</h2>
+            <p>Have a question? Check out our <a href="qna.html">FAQs</a>.</p>
+        </div>
+        <p>&copy; 2024 SciTech Blog</p>
+    </footer>
+</body>
+</html>

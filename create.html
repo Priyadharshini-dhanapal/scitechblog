@@ -1,0 +1,144 @@
+<!-- create.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Blog</title>
+   <style>
+    /* create.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color:#333;
+    color: #fff;
+    padding: 1em;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.create-container {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.create-container h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5em;
+}
+
+textarea, input {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    background-color: #0d131d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #020813;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+   </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html">SciTech Blog</a>
+        </div>
+    </header>
+
+    <section class="create-container">
+        <h1>Create Your Blog</h1>
+        
+        <form id="createBlogForm">
+            <label for="blogTitle">Title:</label>
+            <input type="text" id="blogTitle" name="blogTitle" required>
+            
+            <label for="blogContent">Content:</label>
+            <textarea id="blogContent" name="blogContent" rows="4" required></textarea>
+
+            <label for="blogImage">Image URL:</label>
+            <input type="text" id="blogImage" name="blogImage">
+            
+            <label for="blogVideo">Video URL:</label>
+            <input type="text" id="blogVideo" name="blogVideo">
+
+            <button type="button" onclick="submitBlog()">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SciTech Blog</p>
+    </footer>
+
+    <script>
+       // create.js
+
+function submitBlog(category) {
+  const title = document.getElementById('blogTitle').value;
+  const content = document.getElementById('blogContent').value;
+  const imageUrl = document.getElementById('blogImage').value;
+  const videoUrl = document.getElementById('blogVideo').value;
+
+  // Make an AJAX request based on the selected category
+  fetch(`/api/${category.toLowerCase()}/createBlog`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ title, content, imageUrl, videoUrl }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.message);
+      // Handle success or redirect the user
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      // Handle error
+    });
+}
+
+   
+
+    </script>
+</body>
+</html>
